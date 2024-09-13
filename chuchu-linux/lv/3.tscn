@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn43olw3n43ys"]
+
+[ext_resource type="Texture2D" uid="uid://b6nphfp7wmqiq" path="res://pic/9.png" id="1_7dfnk"]
+[ext_resource type="Script" path="res://lv/3.gd" id="1_fhd62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcgh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6hlm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x80so"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m54db"]
+size = Vector2(776, 20)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_fhd62")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 100)
+
+[node name="1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 150)
+
+[node name="2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 200)
+
+[node name="3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 250)
+
+[node name="4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 300)
+
+[node name="5" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 350)
+
+[node name="6" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 400)
+
+[node name="7" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(100, 450)
+
+[node name="8" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(312, 456)
+
+[node name="9" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(696, 72)
+
+[node name="10" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(504, 72)
+
+[node name="11" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(936, 72)
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("../Players")
+
+[node name="ddtime" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="sco2" type="Area2D" parent="."]
+position = Vector2(-200, 222)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sco2"]
+shape = SubResource("RectangleShape2D_bcgh4")
+
+[node name="ColorRect" type="ColorRect" parent="sco2"]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.658824, 1, 1, 1)
+
+[node name="sco" type="Sprite2D" parent="sco2"]
+
+[node name="e0" type="Area2D" parent="."]
+position = Vector2(344, 292)
+
+[node name="9" type="Sprite2D" parent="e0"]
+texture = ExtResource("1_7dfnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e0"]
+shape = SubResource("RectangleShape2D_b6hlm")
+
+[node name="e1" type="Area2D" parent="."]
+position = Vector2(802, 292)
+
+[node name="9" type="Sprite2D" parent="e1"]
+texture = ExtResource("1_7dfnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e1"]
+shape = SubResource("RectangleShape2D_x80so")
+
+[node name="liuliuqiu" type="StaticBody2D" parent="."]
+position = Vector2(581, 292)
+
+[node name="9" type="Sprite2D" parent="liuliuqiu"]
+scale = Vector2(48.1875, 1)
+texture = ExtResource("1_7dfnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="liuliuqiu"]
+shape = SubResource("RectangleShape2D_m54db")
